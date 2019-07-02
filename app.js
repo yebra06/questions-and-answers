@@ -27,7 +27,17 @@ const createQuestion = async (req, res) => {
   }
 };
 
+const updateQuestion = async (req, res) => {
+  try {
+    await Question.findOneAndUpdate({ _id: req.params.id }, req.body.question);
+    res.status(200).json({ ok: true });
+  } catch (err) {
+    res.status(400).json(createErr(err));
+  }
+}
+
 router.route('/questions').get(findAllQuestions).post(createQuestion);
+router.route('/questions/:id').put(updateQuestion);
 
 const app = express();
 app.use(express.json());
