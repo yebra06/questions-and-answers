@@ -1,0 +1,16 @@
+{
+  "name": "questions-and-answers",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
